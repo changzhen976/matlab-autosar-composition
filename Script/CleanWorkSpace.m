@@ -1,9 +1,6 @@
-%{
+%  Delete name-end-matched folder&files in current folder (and sub-folder)
+%
 
-  Delete name-end-matched folder&files 
-  in current folder (and sub-folder)
-
-%}
 
 FolderPat = ["_autosar_rtw", "slprj"];
 FilePat = [".slxc", ".autosave"];
@@ -38,6 +35,9 @@ function [num, folderCell] = CleanAndGetSubFolders(dirStructure, subFolderPat,su
         
         for i = 3 : tmpLength
             if dirStructure(i).isdir == 1
+                if strcmp(dirStructure(i).name, "resources")
+                    break;
+                end
                 subFolderName = append(dirStructure(i).folder,'\',dirStructure(i).name);
                 if ~endsWith(subFolderName, subFolderPat) % _autosar_rtw
                     num = num + 1;
