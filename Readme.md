@@ -24,6 +24,21 @@ Model management based on git. ([Repository](http://thinkpad-lcz/gituser01/Matla
 ```
 `StructureModel.slx` is the main Model which links all componet models
 
+-----
+
+## How to use
+
+#### Use project
+
+When open project(double click it OR pull it into cmd window), main ArchModel will be open;
+needed folder path are included automaticly
+
+When close project, `cleanWorkspace.m` run, delete cache files
+
+#### Scripts
+
+1. `cleanWorkspace.m` : delete folders named "\*_autosar_rtw"  "slprj", files named "\*.slxc" "\*.autosave"
+2. `exCode.m` : export code into '/Models/release'
 
 ------
 
@@ -40,6 +55,8 @@ Model management based on git. ([Repository](http://thinkpad-lcz/gituser01/Matla
   - [ ] : block use
   - [ ] : code generate
 - [ ] : about DEM/FiM
+  - [x] : block use
+  - [x] : code generate
 - [ ] : script operation
   - [x] : clean workspace
   - [x] : export code
