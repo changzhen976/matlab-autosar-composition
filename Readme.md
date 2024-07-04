@@ -42,4 +42,5 @@ Model management based on git. ([Repository](http://thinkpad-lcz/gituser01/Matla
 - [ ] : about DEM/FiM
 - [ ] : script operation
   - [x] : clean workspace
+  - [x] : export code
   - [ ] : import Enum, DataType & Interface...
