@@ -40,6 +40,11 @@ When close project, `cleanWorkspace.m` run, delete cache files
 1. `cleanWorkspace.m` : delete folders named "\*_autosar_rtw"  "slprj", files named "\*.slxc" "\*.autosave"
 2. `exCode.m` : export code into '/Models/release'
 
+#### Harness
+
+  Harness run will post error message, if arch model has 'DEM/Fim' or 'NvM' block. Move then from arch model to Harness model is ok.
+
+
 ------
 
 ## Task To Do :
@@ -57,6 +62,8 @@ When close project, `cleanWorkspace.m` run, delete cache files
 - [ ] : about DEM/FiM
   - [x] : block use
   - [x] : code generate
+- [ ] : Harness
+  - [ ] : Harness Model test
 - [ ] : script operation
   - [x] : clean workspace
   - [x] : export code

@@ -1,11 +1,21 @@
 %  Delete name-end-matched folder&files in current folder (and sub-folder)
 %
 
-
+%% pattern setting
 FolderPat = ["_autosar_rtw", "slprj"];
 FilePat = [".slxc", ".autosave"];
 
-clearSubFolder(pwd, FolderPat, FilePat);
+
+%% check and load project
+proj = matlab.project.rootProject;
+
+if isempty(proj)
+    error("open project, please.");
+end
+
+clearFolderPath = proj.RootFolder;
+
+clearSubFolder(clearFolderPath, FolderPat, FilePat);
 
 
 %% delete matched folders & files
@@ -36,7 +46,7 @@ function [num, folderCell] = CleanAndGetSubFolders(dirStructure, subFolderPat,su
         for i = 3 : tmpLength
             if dirStructure(i).isdir == 1
                 if strcmp(dirStructure(i).name, "resources")
-                    break;
+                    continue;
                 end
                 subFolderName = append(dirStructure(i).folder,'\',dirStructure(i).name);
                 if ~endsWith(subFolderName, subFolderPat) % _autosar_rtw
