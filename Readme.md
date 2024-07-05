@@ -1,5 +1,7 @@
 # example Matlab project For AUTOSAR STRUCTURE
 
+> ***This repo on GitHub.com is a mirror of my local repo which hosted in personal gitea server***
+
 This project is used to learn how to generate AutoSar C-code and Arxml.
 
 Model management based on git. ([Repository](http://thinkpad-lcz/gituser01/Matlab2023b-AutoSarStructure-test.git) hosted on gitea server running in Thinkpad WSL)
@@ -19,6 +21,8 @@ Model management based on git. ([Repository](http://thinkpad-lcz/gituser01/Matla
     ...
     StructureModel.slx
     dictionary.sldd
+/Harness
+    harnessModel.slx
 /Script
     ***.m
 ```
@@ -62,9 +66,10 @@ When close project, `cleanWorkspace.m` run, delete cache files
 - [ ] : about DEM/FiM
   - [x] : block use
   - [x] : code generate
-- [ ] : Harness
-  - [ ] : Harness Model test
+- [x] : Harness
+  - [x] : Harness Model test
 - [ ] : script operation
   - [x] : clean workspace
   - [x] : export code
   - [ ] : import Enum, DataType & Interface...
+  - [x] : add or delete 'Nvm'%'DEM/Fim' block for Harness model running
