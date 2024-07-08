@@ -73,3 +73,4 @@ When close project, `cleanWorkspace.m` run, delete cache files
   - [x] : export code
   - [ ] : import Enum, DataType & Interface...
   - [x] : add or delete 'Nvm'%'DEM/Fim' block for Harness model running
+  - [ ] : auto connect comps ports(developing...)
