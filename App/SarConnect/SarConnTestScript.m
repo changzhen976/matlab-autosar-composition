@@ -64,7 +64,7 @@ else
 end
 
 disp("- - - - - - - - <Child Composition> - - - - - - - -");
-disp("  <Child Composition>  ");
+% disp("  <Child Composition>  ");
 % display Child Compositions
 if ChildCompositionNum == 0
     warning('no composition in current level');
