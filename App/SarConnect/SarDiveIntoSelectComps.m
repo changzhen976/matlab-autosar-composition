@@ -1,28 +1,37 @@
 
 
-function [CrtComposition, num, ChildCompCell, CompPathStr] = SarDiveIntoSelectComps(SelectedCompositon, ParentPath)
+function [CrntComposition, ChildCompositionNum, ChildCompositionCell, ChildComponentNum, ChildComponetCell, CompPathStr] = SarDiveIntoSelectComps(SelectedCompositon, ParentPath)
 
 
-CrtComposition = SelectedCompositon;
+CrntComposition = SelectedCompositon;
 
 CompPathStr = append(ParentPath,"/",SelectedCompositon.Name);
 
-ChildCompCell = {};
+ChildCompositionCell = {};
+ChildComponetCell = {};
+
 
 if isempty(SelectedCompositon.Compositions)
-    num = 0;
-   
+    ChildCompositionNum = 0;  
 else
-
-    num = length(SelectedCompositon.Compositions);
+    ChildCompositionNum = length(SelectedCompositon.Compositions);
     
-    for i = 1:num
+    for i = 1:ChildCompositionNum
         % disp(CrntCompositon.Compositions(i).Name);
-        ChildCompCell = [ChildCompCell;  SelectedCompositon.Compositions(i)];
+        ChildCompositionCell = [ChildCompositionCell;  SelectedCompositon.Compositions(i)];
     end
-
 end
 
+if isempty(SelectedCompositon.Components)
+    ChildComponentNum = 0;  
+else
+    ChildComponentNum = length(SelectedCompositon.Components);
+    
+    for i = 1:ChildComponentNum
+        % disp(CrntCompositon.Compositions(i).Name);
+        ChildComponetCell = [ChildComponetCell;  SelectedCompositon.Components(i)];
+    end
+end
 
 
 
