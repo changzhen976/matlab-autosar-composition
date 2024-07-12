@@ -45,9 +45,49 @@ replace = '/';
 newStr = regexprep(str,expression,replace);
 disp(newStr);
 
+%% get component with comp name
+
+% ChildCompositionCell
+% ChildComponetCell
+
+% matchedName = {'Compos_Root_03', 'Compon_Root'};
+
+matchedName = [{'Compos_Root_03'} {'Compon_Root'}];
+
+selectComposition = {};
+selectComponent = {};
+
+for i = 1:ChildCompositionNum
+    if ismember(ChildCompositionCell(i).Name, matchedName)
+        SelectCompsIndex(i) = 1;
+        selectComposition = [selectComposition, ChildCompositionCell(i)];
+    end
+end
+
+for i = 1:ChildComponentNum
+    if ismember(ChildComponetCell(i).Name, matchedName)
+        SelectCompnIndex(i) = 1;
+        selectComponent = [selectComponent, ChildComponetCell(i)];
+    end
+end
+
+% selectComposition = ChildCompositionCell(SelectCompsIndex)
+% selectComponent = ChildComponetCell(SelectCompnIndex)
+selectComps = [selectComposition, selectComponent];
 
 
 
+%% add port
+
+% outPort1 = addPort(newComponents(1).Architecture,"testSig","out");
+
+addPort(ChildCompositionCell(1), 'Sender', 'testPortSender');
 
 
+%% ismember
+
+a = 'a';
+b = ['a', 'b'];
+
+c = b(ismember(b, a));
 
